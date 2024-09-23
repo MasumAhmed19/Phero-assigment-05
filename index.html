@@ -81,12 +81,12 @@
         <section class="container mx-auto md:py-[70px] py-[20px] px-[10px] ">
 
             <div class=" flex md:gap-4 gap-[150px] items-center justify-center">
-                <button class="btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donation</button>
-                <button class="btn bg-transparent border-2 border-[#B4F461] hover:bg-[#B4F461] hover:border-[#B4F461]">History</button>
+                <button id="donationBtn" class="btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donation</button>
+                <button id="historyBtn" class="btn bg-transparent border-2 border-[#B4F461] hover:bg-[#B4F461] hover:border-[#B4F461]">History</button>
             </div>
 
             <!-- Donation Content -->
-            <div>
+            <div id="donationSection">
                 <!-- Noakhali -->
                 <div class="flex lg:flex-row flex-col lg:gap-15 gap-10 p-6  mx-auto border-2 border-[#E0E0E2] rounded-lg my-10">
                     <!-- <div class="w-[100%]"><img class="w-[100%]" src="./assets/noakhali.png" alt=""></div> -->
@@ -144,7 +144,7 @@
 
 
         <!-- section for History -->
-        <section class="container mx-auto md:py-[70px] py-[20px] px-[10px] hidden">
+        <section id="historySection" class="container mx-auto md:py-[70px] py-[20px] px-[10px] hidden">
 
             <div class="flex flex-col gap-4">
 
@@ -173,5 +173,7 @@
             <p class="">Together, we can make a difference in the lives of those in need. Your donation brings hope and change to communities in crisis.</p>
         </div>
     </footer>
+
+    <script src="apps.js"></script>
 </body>
 </html>
