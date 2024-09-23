@@ -6,6 +6,7 @@
     <title>Donate Bangladesh</title>
 
     <!-- Tailwind + DaisyUI + CSS-->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,7 +23,7 @@
     <header class="bg-[#F9F7F3] px-5 md:block hidden">
         <div class="container mx-auto flex justify-between items-center h-[120px] flex-wrap ">
             
-            <div class="btn text-[18px] bg-[#B4F461] font-semibold px-8 "> Blog</div>
+            <a href="index.html" class="py-2 rounded-md text-[18px] bg-[#B4F461] font-semibold px-8 inline-block">Home</a>
             
             <div class="logo flex items-center gap-4 mx-auto"> 
                 <img src="./assets/logo.png" class="w-[45px]" alt="">
@@ -52,8 +53,7 @@
             </div>
 
             <div class="flex justify-around w-full ">
-
-                <div><div class="btn text-sm bg-[#B4F461] font-semibold  px-6 "> Blog</div></div>
+                <a href="index.html" class="py-2 rounded-md text-[18px] bg-[#B4F461] font-semibold px-8 inline-block">Home</a>
 
                 <div class="flex items-center gap-3 text-[18px] font-bold mr-8 ">
                     <img src="./assets/coin.png" class="" alt="">
@@ -75,13 +75,44 @@
 
     
     <main>
-        <section class="container mx-auto md:py-[70px] py-[20px] px-[10px] ">
+        <section class="container mx-auto h-[80vh] px-[10px] flex flex-col items-center justify-center">
 
-            <div class=" flex md:gap-4 gap-[150px] items-center justify-center">
-                <button class="btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donation</button>
-                <button class="btn bg-transparent border-2 border-[#B4F461] hover:bg-[#B4F461] hover:border-[#B4F461]">History</button>
+            <div class="py-4">
+                <h2 class="text-3xl font-bold text-center">Frequently Asked Questions</h2>
             </div>
 
+
+            <div class="mt-5 space-y-3 w-[100%]">
+                <div class="collapse collapse-plus bg-base-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200 rounded-lg">
+                    <input type="checkbox" />
+                    <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using the DOM?</div>
+                    <div class="collapse-content">
+                        <p>hello</p>
+                    </div>
+                </div>
+            </div>
+            
 
         </section>
 
