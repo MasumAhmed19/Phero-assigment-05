@@ -42,14 +42,13 @@ function komTaka(){
     alert('taka kom apnr')
 }
 
-var currentDate = new Date();
-var formattedDate = currentDate.toString(); 
-
-
 
 function isValid(num) {
     return !isNaN(num) && num.toString().trim() === parseFloat(num).toString();; 
 }
+
+
+
 
 // Donation section handling
 // all should be select with ID
@@ -59,16 +58,18 @@ function isValid(num) {
 //aidBtn        aidInp              aidTotalDonation
 
 
-function forDonation(a){
-    var donatebtn = document.getElementById(a);
-    var inp = document.getElementById('noakhaliInp');
-    var TotalDonationElem = document.getElementById('noakhaliTotalDonation');
+function forDonation(btnId, inputId, totalDonationId, location){
     
-    var prevAmount = parseFloat(TotalDonationElem.innerText); 
+    var donatebtn = document.getElementById(btnId);
+    var inp = document.getElementById(inputId);
+    var TotalDonationElem = document.getElementById(totalDonationId);
+    
     
     donatebtn.addEventListener('click', function() {
         var inpVal = inp.value.trim(); 
-    
+        
+        var prevAmount = parseFloat(TotalDonationElem.innerText); 
+        
         if (isValid(inpVal) && parseFloat(inpVal) > 0 && parseFloat(inpVal) <= parseFloat(walletAmountp.innerText)) {
             var donationAmount = parseFloat(inpVal);
             prevAmount += donationAmount; 
@@ -78,11 +79,13 @@ function forDonation(a){
             var currentWalletAmount = parseFloat(walletAmountp.innerText);
             walletAmountp.innerText = (currentWalletAmount - donationAmount); //for pc
             walletAmountm.innerText = (currentWalletAmount - donationAmount); //for mobile
-
+            
             inp.value = '';
-
+            
+            var currentDate = new Date();
+            var formattedDate = currentDate.toString(); 
             addHistory.innerHTML += `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
-                    <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h4>
+                    <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at ${location}, Bangladesh</h4>
                     <p class="text-[#585858]">Date :  ${formattedDate}</p>
                 </div>`
     
@@ -94,7 +97,9 @@ function forDonation(a){
 
 }
 
-forDonation('noakhalibtn');
+forDonation('noakhalibtn', 'noakhaliInp', 'noakhaliTotalDonation', "Noakhali");
+forDonation('fenibtn', 'feniInp', 'feniTotalDonation', "Feni");
+forDonation('aidBtn', 'aidInp', 'aidTotalDonation', "Aid for Injured in the Quota Movement");
 
 
 
