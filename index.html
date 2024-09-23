@@ -61,7 +61,7 @@
                 <div class="flex items-center gap-3 text-[18px] font-bold mr-8 ">
                     <img src="./assets/coin.png" class="" alt="">
                     <div class="flex gap-1">
-                        <h4>5500</h4>
+                        <h4 id="walletAmountm">5500</h4>
                         <h4>BDT</h4>
                     </div>
                 </div>
@@ -110,14 +110,14 @@
                     <div class="bg-[url('./assets/feni.png')] bg-cover bg-top bg-center w-full rounded-lg lg:h-auto min-h-[250px]"></div>
                     
                     <div class="w-[100%] space-y-5 flex flex-col items-start justify-start">
-                        <button class="btn text-[#545454] cursor-default hover:bg-[#F2F2F2] border-none"><img src="./assets/coin.png" alt=""> <span>600</span> BDT</button>
+                        <button class="btn text-[#545454] cursor-default hover:bg-[#F2F2F2] border-none"><img src="./assets/coin.png" alt=""> <span class="feniTotalDonation">600</span> BDT</button>
                         <h2 class="text-2xl font-bold">Donate for Flood Relief in Feni, Bangladesh</h2>
                         <p class="text-xl text-[#545454]"> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today.</p>
     
-                        <input class="w-full border-2 border-[#E0E0E2] p-3 rounded-lg placeholder:text-xl placeholder:font-extralight outline-[#B4F461]" placeholder="Write Donation Amount" type="text" name="" id="">
+                        <input id="feniInp" class="w-full border-2 border-[#E0E0E2] p-3 rounded-lg placeholder:text-xl placeholder:font-extralight outline-[#B4F461]" placeholder="Write Donation Amount" type="text" name="" id="">
     
                         <!-- <div class="lg:py-0"></div> -->
-                        <button class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
+                        <button id="fenibtn" class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
                     </div>
                 </div>
     
@@ -127,14 +127,14 @@
                     <div class="bg-[url('./assets/quota-protest.png')] bg-cover bg-top bg-center w-full rounded-lg lg:h-auto min-h-[250px]"></div>
                     
                     <div class="w-[100%] space-y-5 flex flex-col items-start justify-start">
-                        <button class="btn text-[#545454] cursor-default hover:bg-[#F2F2F2] border-none"><img src="./assets/coin.png" alt=""> <span>2400</span> BDT</button>
+                        <button class="btn text-[#545454] cursor-default hover:bg-[#F2F2F2] border-none"><img src="./assets/coin.png" alt=""> <span id="aidTotalDonation">2400</span> BDT</button>
                         <h2 class="text-2xl font-bold">Aid for Injured in the Quota Movement</h2>
                         <p class="text-xl text-[#545454]"> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
     
-                        <input class="w-full border-2 border-[#E0E0E2] p-3 rounded-lg placeholder:text-xl placeholder:font-extralight outline-[#B4F461]" placeholder="Write Donation Amount" type="text" name="" id="">
+                        <input id="aidInp" class="w-full border-2 border-[#E0E0E2] p-3 rounded-lg placeholder:text-xl placeholder:font-extralight outline-[#B4F461]" placeholder="Write Donation Amount" type="text" name="" id="">
     
                         <!-- <div class="lg:py-0"></div> -->
-                        <button class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
+                        <button id="aidBtn" class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
                     </div>
                 </div>
             </div>
