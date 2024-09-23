@@ -3,8 +3,8 @@ var donationBtn = document.getElementById('donationBtn')
 var historyBtn = document.getElementById('historyBtn')
 var donationSection = document.getElementById('donationSection')
 var historySection = document.getElementById('historySection')
-
 var walletAmountp = document.getElementById('walletAmountp')//wallet amount for pc
+var addHistory = document.getElementById('addHistory')
 
 
 
@@ -41,7 +41,8 @@ function komTaka(){
     alert('taka kom apnr')
 }
 
-
+var currentDate = new Date();
+var formattedDate = currentDate.toString(); 
 
 
 
@@ -51,7 +52,7 @@ function isValid(num) {
 
 // Donation section handling
 
-function forNoakhali(){
+function forDonation(){
     var donatebtn = document.getElementById('noakhalibtn');
     var inp = document.getElementById('noakhaliInp');
     var TotalDonationElem = document.getElementById('noakhaliTotalDonation');
@@ -68,9 +69,13 @@ function forNoakhali(){
             TotalDonationElem.innerText = prevAmount;
     
             var currentWalletAmount = parseFloat(walletAmountp.innerText);
-            console.log(currentWalletAmount)
             walletAmountp.innerText = (currentWalletAmount - donationAmount); 
             inp.value = '';
+
+            addHistory.innerHTML += `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
+                    <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h4>
+                    <p class="text-[#585858]">Date :  ${formattedDate}</p>
+                </div>`
     
         } else {
             invalidMessage();
@@ -80,7 +85,7 @@ function forNoakhali(){
 
 }
 
-forNoakhali();
+forDonation();
 
 
 
