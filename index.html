@@ -73,10 +73,6 @@
 
     </header>    
 
-
-
-
-    
     <main>
         <section class="container mx-auto md:py-[70px] py-[20px] px-[10px] ">
 
@@ -117,7 +113,7 @@
                         <input id="feniInp" class="w-full border-2 border-[#E0E0E2] p-3 rounded-lg placeholder:text-xl placeholder:font-extralight outline-[#B4F461]" placeholder="Write Donation Amount" type="text" name="" id="">
     
                         <!-- <div class="lg:py-0"></div> -->
-                        <button id="fenibtn" class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
+                        <button id="fenibtn" onclick="my_modal_3.showModal()" class=" btn text-[18px] bg-[#B4F461] hover:bg-transparent hover:border-2 hover:border-[#B4F461]">Donate Now</button>
                     </div>
                 </div>
     
@@ -153,6 +149,26 @@
             </div>
 
         </section>
+
+
+        <!-- modal -->
+        <!-- You can open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_3.showModal()">open modal</button>
+
+        <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+            <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost bg-red-400 absolute right-2 top-2 hover:bg-red-600 text-white">✕</button>
+            </form>
+            <div class="flex flex-col justify-center items-center p-5 text-center gap-5">
+                <h3 class="font-bold text-4xl ">Congrats!</h3>
+                <img class="w-[40px]" src="./assets/coin.png" alt="">
+                <p class="py-4 text-[#585858]">You Have Donated for Humankind</p>
+                <h3 class="text-lg font-bold mt-[-30px]">Successfully</h3>
+            </div>
+        </div>
+        </dialog>
+
 
         
     </main>
