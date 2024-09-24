@@ -84,10 +84,10 @@ function forDonation(btnId, inputId, totalDonationId, location){
             
             var currentDate = new Date();
             var formattedDate = currentDate.toString(); 
-            addHistory.innerHTML += `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
+            addHistory.innerHTML = `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
                     <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at ${location}, Bangladesh</h4>
                     <p class="text-[#585858]">Date :  ${formattedDate}</p>
-                </div>`
+                </div>`  + addHistory.innerHTML 
     
         } else {
             invalidMessage();
@@ -102,5 +102,5 @@ forDonation('fenibtn', 'feniInp', 'feniTotalDonation', "Feni");
 forDonation('aidBtn', 'aidInp', 'aidTotalDonation', "Aid for Injured in the Quota Movement");
 
 
-
+console.log(feniTotalDonation)
 
