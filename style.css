@@ -13,3 +13,12 @@
 
     font-family: "Lexend", sans-serif;
 }
+
+
+.cdestyl{
+    background-color: rgba(128, 128, 128, 0.2);
+    padding: 0 4px;
+    border-radius: 2px;
+    color: #1D4ED8;
+    font-style: italic;
+}
