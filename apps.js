@@ -6,6 +6,10 @@ var historySection = document.getElementById('historySection')
 var walletAmountp = document.getElementById('walletAmountp')//wallet amount for pc
 var walletAmountm = document.getElementById('walletAmountm')//wallet amount for mobile
 var addHistory = document.getElementById('addHistory')
+var modalOK = document.getElementById('my_modal_3');
+var modalNotOk = document.getElementById('my_modal_insufficient');
+var my_modal_invalid = document.getElementById('my_modal_invalid');
+
 
 
 
@@ -70,27 +74,40 @@ function forDonation(btnId, inputId, totalDonationId, location){
         
         var prevAmount = parseFloat(TotalDonationElem.innerText); 
         
-        if (isValid(inpVal) && parseFloat(inpVal) > 0 && parseFloat(inpVal) <= parseFloat(walletAmountp.innerText)) {
-            var donationAmount = parseFloat(inpVal);
-            prevAmount += donationAmount; 
-    
-            TotalDonationElem.innerText = prevAmount;
-    
-            var currentWalletAmount = parseFloat(walletAmountp.innerText);
-            walletAmountp.innerText = (currentWalletAmount - donationAmount); //for pc
-            walletAmountm.innerText = (currentWalletAmount - donationAmount); //for mobile
+        if (isValid(inpVal) && parseFloat(inpVal) > 0) {
             
-            inp.value = '';
+            if(parseFloat(inpVal) <= parseFloat(walletAmountp.innerText)){
+                var donationAmount = parseFloat(inpVal);
+                prevAmount += donationAmount; 
+        
+                TotalDonationElem.innerText = prevAmount;
+        
+                var currentWalletAmount = parseFloat(walletAmountp.innerText);
+                walletAmountp.innerText = (currentWalletAmount - donationAmount); //for pc
+                walletAmountm.innerText = (currentWalletAmount - donationAmount); //for mobile
+                
+                inp.value = '';
+                
+                var currentDate = new Date();
+                var formattedDate = currentDate.toString(); 
+                addHistory.innerHTML = `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
+                        <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at ${location}, Bangladesh</h4>
+                        <p class="text-[#585858]">Date :  ${formattedDate}</p>
+                    </div>`  + addHistory.innerHTML 
+                
+                // modal open:
+                modalOK.showModal();
+                
+                
+            }else{
+                //insufficient balance
+                modalNotOk.showModal();
+                
+            }
             
-            var currentDate = new Date();
-            var formattedDate = currentDate.toString(); 
-            addHistory.innerHTML = `<div class=" flex flex-col px-6 py-8 border-2 rounded-lg gap-4">
-                    <h4 class="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at ${location}, Bangladesh</h4>
-                    <p class="text-[#585858]">Date :  ${formattedDate}</p>
-                </div>`  + addHistory.innerHTML 
-    
+            
         } else {
-            invalidMessage();
+            my_modal_invalid.showModal();
             inp.value = '';
         }
     });
@@ -102,5 +119,5 @@ forDonation('fenibtn', 'feniInp', 'feniTotalDonation', "Feni");
 forDonation('aidBtn', 'aidInp', 'aidTotalDonation', "Aid for Injured in the Quota Movement");
 
 
-console.log(feniTotalDonation)
+
 
